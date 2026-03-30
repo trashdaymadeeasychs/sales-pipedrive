@@ -62,6 +62,6 @@ function dbToClient(r) {
     phone: r.phone || '',
     org: r.org || '',
     role: r.role || '',
-    created: r.created_at?.split('T')[0] || '',
+    created: r.created_at ? new Date(r.created_at).toISOString().split('T')[0] : '' || '',
   };
 }
